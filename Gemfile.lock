@@ -216,7 +216,6 @@ GEM
     spork-rails (4.0.0)
       rails (>= 3.0.0, < 5)
       spork (>= 1.0rc0)
-    spring (1.1.2)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -293,7 +292,6 @@ DEPENDENCIES
   selenium-webdriver
   simplecov
   spork-rails
-  spring
   sqlite3
   tapp
   turbolinks

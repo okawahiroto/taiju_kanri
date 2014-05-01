@@ -1,0 +1,27 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/succi0303/Dropbox/succi0303/development_repositories/taiju_kanri/taiju_kanri/app/controllers/static_pages_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/succi0303/Dropbox/succi0303/development_repositories/taiju_kanri/taiju_kanri/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1398933240
+  }
+}

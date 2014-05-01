@@ -1,0 +1,33 @@
+<% provide :title, 'Contact' %>
+
+<div class="container">
+  <div class="page-header">
+    <h2>お問い合わせ</h2>
+  </div>
+
+  <h3>連絡先</h3>
+
+  <p>
+    お問い合わせは、下記Twitterアカウント宛てにメッセージをいただくか、ブログのコンタクトフォームからご連絡をいただきますようお願いします。
+  </p>
+
+  <dl>
+    <dt><%= fa_icon "twitter", text: "Twitter" %></dt>
+    <dd><%= link_to '@succi0303', 'https://twitter.com/succi0303', { target: '_blank' } %></dd>
+    <dt><%= fa_icon "rss-square", text: "Blog" %></dt>
+    <dd><%= link_to 'prime factor', 'http://www.succi.jp/blog/', { target: '_blank' } %></dd>
+  </dl>
+
+  <h3>ソースコード</h3>
+
+  <p>
+    本ウェブサイトのソースコードはGithubで公開しています。ご興味を持っていただいた方は下記のGithubリポジトリを参照ください。
+  </p>
+
+  <dl>
+    <dt><%= fa_icon "github", text: "Github" %></dt>
+    <dd><%= link_to 'succi0303/taiju_kanri',
+      'https://github.com/succi0303/taiju_kanri',
+      { target: '_blank' } %></dd>
+  </dl>
+</div>

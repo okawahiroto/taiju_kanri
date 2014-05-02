@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   get 'static_pages/index'
 
-  get 'signup' => 'users#new'
+  get '/signup' => 'users#new'
+  get '/signin' => 'sessions#new'
+  delete '/signout' => 'sessions#destroy'
   get '/about' => 'static_pages#about'
   get '/contact' => 'static_pages#contact'
 

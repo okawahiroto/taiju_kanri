@@ -30,6 +30,10 @@ describe User do
       expect(user).to respond_to(:password_confirmation)
     end
 
+    it "has remember_token" do
+      expect(user).to respond_to(:remember_token)
+    end
+
     it "has authenticate" do
       expect(user).to respond_to(:authenticate)
     end

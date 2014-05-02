@@ -1,0 +1,23 @@
+<% provide(:title, 'ユーザー情報一覧') %>
+
+<div class="container">
+
+  <div class="page-header">
+    <h2>ユーザー情報一覧</h2>
+  </div>
+
+  <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+
+  <table class="table table-bordered">
+    <tr>
+      <th>名前</th>
+    </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.name, user %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+</div>

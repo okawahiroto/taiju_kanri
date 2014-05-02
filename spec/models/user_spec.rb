@@ -37,6 +37,10 @@ describe User do
     it "has authenticate" do
       expect(user).to respond_to(:authenticate)
     end
+
+    it "has admin" do
+      expect(user).to respond_to(:admin)
+    end
   end
 
   it "is invalid without name" do

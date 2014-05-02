@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :users
 
   get 'static_pages/index'
-  get 'users/new'
 
   get 'signup' => 'users#new'
   get '/about' => 'static_pages#about'

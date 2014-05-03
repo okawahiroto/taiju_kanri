@@ -1,4 +1,15 @@
+/* base */
+p {
+  line-height: 1.6;
+}
 /* top page */
 div.jumbotron {
   text-align: center;
+
+  div.notes {
+    p {
+      font-size: 1em;
+    }
+  }
 }
+

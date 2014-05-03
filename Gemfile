@@ -55,3 +55,8 @@ gem 'will_paginate-bootstrap'
 gem 'bcrypt'
 gem 'chartkick'
 gem 'validates_email_format_of'
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end

@@ -115,13 +115,15 @@ describe UsersController do
     context "with invalid information" do
 
       before :each do
-        patch :update, id: @user, user:attributes_for(:user, name: ' ', email: ' ')
+        patch :update, id: @user,
+          user:attributes_for(:user, name: ' ', email: ' ', target_weight: 60.0)
       end
 
       it "does not change @user's attributes" do
         @user.reload
         expect(@user.name).to_not eq(' ')
         expect(@user.email).to_not eq(' ')
+        expect(@user.target_weight).to_not eq(60.0)
       end
 
       it "re-renders the :edit template" do
@@ -133,13 +135,15 @@ describe UsersController do
 
       before :each do
         patch :update, id: @user,
-          user: attributes_for(:user, name: 'update_user', email: 'update@example.com')
+          user: attributes_for(:user, name: 'update_user', email: 'update@example.com',
+                               target_weight: 60.0)
       end
 
       it "changes @user's attribute" do
         @user.reload
         expect(@user.name).to eq('update_user')
         expect(@user.email).to eq('update@example.com')
+        expect(@user.target_weight).to eq(60.0)
       end
 
       it "redirects to #show" do

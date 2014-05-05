@@ -58,7 +58,7 @@ describe User do
   it "is invalid without password" do
     expect(
       build(:user, password: nil)
-    ).to have(2).errors_on(:password)
+    ).to have(3).errors_on(:password)
   end
 
   it "is invalid if name is too long" do

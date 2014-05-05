@@ -18,6 +18,10 @@ describe User do
       expect(user).to respond_to(:email)
     end
 
+    it "has target_weight" do
+      expect(user).to respond_to(:target_weight)
+    end
+
     it "has password_digest" do
       expect(user).to respond_to(:password_digest)
     end

@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/plataformatec/simple_form.git
+  revision: 609e1578179f0c64873510731cddb3716c557e53
+  specs:
+    simple_form (3.1.0.rc1)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -299,6 +307,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   selenium-webdriver
+  simple_form (~> 3.1.0.rc1)!
   simplecov
   spork-rails
   sqlite3

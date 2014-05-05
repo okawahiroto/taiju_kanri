@@ -55,6 +55,7 @@ gem 'will_paginate-bootstrap'
 gem 'bcrypt'
 gem 'chartkick'
 gem 'validates_email_format_of'
+gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form'
 
 group :production do
   gem 'pg'

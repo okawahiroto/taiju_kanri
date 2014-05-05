@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @weights = @user.weights.paginate(page: params[:page], per_page: 7).order('date DESC')
   end
 
   def new

@@ -3,6 +3,7 @@ require 'spec_helper'
 describe UsersController do
 
   let(:user) { create(:user) }
+  let(:weight) { create(:weight, user: user) }
 
   before :each do
     controller.stub(:signed_in?).and_return(true)
@@ -31,6 +32,10 @@ describe UsersController do
 
     it "assigns the ruquested user to @user" do
       expect(assigns(:user)).to eq user
+    end
+
+    it "assigns the user's weights to @weights" do
+      expect(assigns(:weights)).to eq [weight]
     end
 
     it "renders the :show template" do

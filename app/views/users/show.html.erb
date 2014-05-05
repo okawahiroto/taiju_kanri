@@ -16,4 +16,18 @@
       class: 'btn btn-primary' %>
   </p>
 
+  <%= will_paginate @weights, renderer: BootstrapPagination::Rails %>
+
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th>年月日</th>
+      <th>体重(kg)</th>
+      <th>修正 / 削除</th>
+    </tr>
+
+    <% if @user.weights.any? %>
+      <%= render @weights %>
+    <% end %>
+  </table>
+
 </div>

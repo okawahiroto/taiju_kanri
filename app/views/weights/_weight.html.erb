@@ -1,0 +1,12 @@
+<tr>
+  <td><%= weight.date %></td>
+  <td><%= weight.weight %></td>
+  <td>
+    <%= link_to '修正', edit_weight_path(weight),
+      class: 'btn btn-warning btn-xs' %>
+    <%= link_to '削除', weight_path(weight),
+      method: :delete,
+      data: { confirm: '削除してよろしいですか？' },
+      class: 'btn btn-danger btn-xs' %>
+  </td>
+</tr>

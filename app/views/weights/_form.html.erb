@@ -1,0 +1,5 @@
+<%= simple_form_for(@weight) do |f| %>
+  <%= f.input :date, as: :string, label: '年月日(yyyy-mm-dd)' %>
+  <%= f.input :weight, label: '体重' %>
+  <%= f.button :submit, value: '登録する', class: 'btn-primary' %>
+<% end %>

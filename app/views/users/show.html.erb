@@ -11,4 +11,23 @@
     <dd><%= @user.target_weight %> kg</dd>
   </dl>
 
+  <p>
+    <%= link_to '体重を登録する', new_weight_path,
+      class: 'btn btn-primary' %>
+  </p>
+
+  <%= will_paginate @weights, renderer: BootstrapPagination::Rails %>
+
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th>年月日</th>
+      <th>体重(kg)</th>
+      <th>修正 / 削除</th>
+    </tr>
+
+    <% if @user.weights.any? %>
+      <%= render @weights %>
+    <% end %>
+  </table>
+
 </div>

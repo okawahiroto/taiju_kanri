@@ -1,6 +1,7 @@
 <%= simple_form_for(@user) do |f| %>
   <%= f.input :name, label: '名前',
-    placeholder: '名前を入力してください' %>
+    placeholder: '名前を入力してください',
+    autofocus: true %>
   <%= f.input :email, label: 'メールアドレス',
     placeholder: 'メールアドレスを入力してください'%>
   <%= f.input :target_weight, label: '目標体重(kg)',

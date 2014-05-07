@@ -13,7 +13,7 @@
 
   <p>
     <%= link_to '体重を登録する', new_weight_path,
-      class: 'btn btn-primary' %>
+      class: 'btn btn-primary', data: { no_turbolink: true } %>
   </p>
 
   <%= will_paginate @weights, renderer: BootstrapPagination::Rails %>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :weights, only: [:new, :create]
+  resources :weights, only: [:new, :create, :edit, :update, :destroy]
 
   get 'static_pages/index'
 

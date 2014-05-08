@@ -6,10 +6,16 @@
     <h2><%= @user.name %></h2>
   </div>
 
-  <dl>
-    <dt>目標体重</dt>
-    <dd><%= @user.target_weight %> kg</dd>
-  </dl>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <dl>
+        <dt>目標体重</dt>
+        <dd><%= @user.target_weight %> kg</dd>
+        <dt>現在の体重 ( <%= @current_date %>現在 )</dt>
+        <dd><%= @current_weight %> kg</dd>
+      </dl>
+    </div>
+  </div>
 
   <p>
     <%= link_to '体重を登録する', new_weight_path,

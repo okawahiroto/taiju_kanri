@@ -53,4 +53,22 @@ describe Weight do
             build(:weight, weight: -1.0)
     ).to have(1).errors_on(:weight)
   end
+
+  describe "the current weight & current date" do
+
+    before :each do
+      @user1 = create(:user)
+      @user1_weight1 = @user1.weights.create(date: '2014-05-01', weight: 65.0)
+      @user1_weight2 = @user1.weights.create(date: '2014-05-02', weight: 66.0)
+
+      @user2 = create(:user)
+      @user2_weight1 = @user2.weights.create(date: '2014-05-03', weight: 67.0)
+      @user2_weight2 = @user2.weights.create(date: '2014-05-04', weight: 68.0)
+    end
+
+    it "returns the current weight" do
+      expect(Weight.current_weight(@user1)).to eq(@user1_weight2)
+    end
+  end
+
 end

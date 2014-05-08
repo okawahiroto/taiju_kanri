@@ -9,6 +9,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @weights = @user.weights.paginate(page: params[:page], per_page: 7).order('date DESC')
+
+    current_weight = Weight.current_weight(@user)
+    @current_weight = current_weight.weight
+    @current_date = current_weight.date.strftime('%Y年%m月%d日')
   end
 
   def new

@@ -9,4 +9,8 @@ class Weight < ActiveRecord::Base
   validates :user_id,
     presence: true,
     uniqueness: { scope: :date }
+
+  def self.current_weight(user)
+    where(user_id: user.id).order('date DESC').first
+  end
 end

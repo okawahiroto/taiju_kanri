@@ -1,5 +1,9 @@
 <% provide(:title, @user.name) %>
 
+<% content_for :head do %>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<% end %>
+
 <div class="container">
 
   <div class="page-header">
@@ -21,6 +25,10 @@
     <%= link_to '体重を登録する', new_weight_path,
       class: 'btn btn-primary', data: { no_turbolink: true } %>
   </p>
+
+  <div class="weight-graph">
+    <%= line_chart @graph_data, min: @min_value_in_chart %>
+  </div>
 
   <%= will_paginate @weights, renderer: BootstrapPagination::Rails %>
 

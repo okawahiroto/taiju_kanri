@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @weights = @user.weights.paginate(page: params[:page], per_page: 7).order('date DESC')
+    @weights = @user.weights.paginate(page: params[:page], per_page: 14).order('date DESC')
 
     current_weight = Weight.current_weight(@user)
     if current_weight.nil?
@@ -18,6 +18,9 @@ class UsersController < ApplicationController
       @current_weight = current_weight.weight
       @current_date = current_weight.date.strftime('%Y年%m月%d日')
     end
+
+    @graph_data = @weights.order('date ASC').group(:date).sum(:weight)
+    @min_value_in_chart = @weights.select(:weight).order('weight DESC').first
   end
 
   def new

@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 
-<div class="container">
+<div class="container" id="pagetop">
 
   <div class="page-header">
     <h2><%= @user.name %></h2>
@@ -40,5 +40,10 @@
       <%= render @weights %>
     <% end %>
   </table>
+
+  <%= link_to  '先頭へ戻る', '#pagetop',
+    class: 'btn btn-warning',
+    id: 'return-to-top'
+  %>
 
 </div>

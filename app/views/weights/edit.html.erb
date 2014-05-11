@@ -6,7 +6,8 @@
   </div>
 
   <p>
-    <%= link_to '一覧に戻る', user_path(current_user), class: 'btn btn-default' %>
+    <%= link_to fa_icon('undo', text: 'プロフィールに戻る'),
+      user_path(current_user), class: 'btn btn-default' %>
   </p>
 
   <%= render 'form' %>

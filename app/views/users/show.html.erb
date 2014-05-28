@@ -17,11 +17,19 @@
     </div>
   </div>
 
-  <p>
-    <%= link_to fa_icon('pencil-square-o', text: '体重を登録する'),
-      new_weight_path,
-      class: 'btn btn-primary', data: { no_turbolink: true } %>
-  </p>
+  <% if @user == current_user %>
+    <p>
+      <%= link_to fa_icon('pencil-square-o', text: '体重を登録する'),
+        new_weight_path,
+        class: 'btn btn-primary', data: { no_turbolink: true } %>
+    </p>
+  <% else %>
+    <p>
+      <%= link_to fa_icon('pencil-square-o', text: '体重を登録する'),
+        new_weight_path,
+        class: 'btn btn-primary', data: { no_turbolink: true }, disabled: true %>
+    </p>
+  <% end %>
 
   <div class="weight-graph">
     <%= line_chart @graph_data, min: @min_value_in_chart %>

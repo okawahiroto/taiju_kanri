@@ -1,14 +1,29 @@
 <tr>
   <td><%= weight.date.strftime('%Y年%m月%d日') %></td>
   <td><%= weight.weight %> kg</td>
-  <td>
-    <%= link_to fa_icon('check-circle', text: '修正'),
-      edit_weight_path(weight),
-      class: 'btn btn-warning btn-xs', data: { no_turbolink: true } %>
-    <%= link_to fa_icon('times-circle', text: '削除'),
-      weight_path(weight),
-      method: :delete,
-      data: { confirm: '削除してよろしいですか？' },
-      class: 'btn btn-danger btn-xs' %>
-  </td>
+
+  <% if @user == current_user %>
+    <td>
+      <%= link_to fa_icon('check-circle', text: '修正'),
+        edit_weight_path(weight),
+        class: 'btn btn-warning btn-xs', data: { no_turbolink: true } %>
+      <%= link_to fa_icon('times-circle', text: '削除'),
+        weight_path(weight),
+        method: :delete,
+        data: { confirm: '削除してよろしいですか？' },
+        class: 'btn btn-danger btn-xs' %>
+    </td>
+  <% else %>
+    <td>
+      <%= link_to fa_icon('check-circle', text: '修正'),
+        edit_weight_path(weight),
+        class: 'btn btn-warning btn-xs', data: { no_turbolink: true }, disabled: true %>
+      <%= link_to fa_icon('times-circle', text: '削除'),
+        weight_path(weight),
+        method: :delete,
+        data: { confirm: '削除してよろしいですか？' },
+        class: 'btn btn-danger btn-xs', disabled: true %>
+    </td>
+  <% end %>
+
 </tr>

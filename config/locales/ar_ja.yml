@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      weight: 体重
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        target_weight: 目標体重
+      weight:
+        date: 年月日
+        weight: 体重

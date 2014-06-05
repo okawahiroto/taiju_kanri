@@ -59,6 +59,8 @@ Spork.prefork do
     puts 'required simplecov'
   end
 
+  Faker::Config.locale = :en
+
 end
 
 Spork.each_run do

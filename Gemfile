@@ -56,6 +56,7 @@ gem 'bcrypt'
 gem 'chartkick'
 gem 'validates_email_format_of'
 gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form'
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
 
 group :production do
   gem 'pg'
